@@ -1,0 +1,69 @@
+---
+title       : Patent Kings
+subtitle    : Finding patent agents for start-ups
+author      : Kevin Joseph Spring
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Intellectual Property (IP) protection is the most important step in create a start-up
+
+### There are many unenforcable patents owned by independent inventors
+* In the U.S., the rules for patent is over 4,000 pages!
+* Very difficult to do on your own.
+* Start-ups and indie investors can end up with claims with limited scope.
+
+### IP protection needs to be completed before Seed Funding Rounds
+* Venture capital will not invest in companies without that protection.
+* This means the patenting process has to be done without the oversight of the VCs that have the expertise to guide a start-up in patent protection.
+
+--- .class #id 
+
+## Over 40,000 patent practitioners 
+
+### Metro area density of patent practitioners
+
+```{r, eval=TRUE, results='asis', echo=FALSE}
+library(googleVis)
+dat <- read.csv("heatmappingData.csv")
+heatMapping <- function(dat) {
+  Gmap <- gvisGeoChart(dat, "metroCode", colorvar = "numberAgent", 
+                       options=list(region = "US",
+                                    resolution = "metros",
+                                    displayMode="regions", 
+                                    colorAxis="{colors:['white',
+                                    'blue', 
+                                    'orange', 
+                                    'red']}",
+                                    backgroundColor="lightblue"), chartid="Density")
+  return(Gmap)
+}
+G <- heatMapping(dat)
+print(G, "chart")
+```
+
+* A patent costs on average $20,000 per country.
+* Takes 2 to 3 years to get a patent.
+
+--- .class #id
+
+## Finding the right patent practitioner can put the start-up on the right foundation
+
+* An unqualified (legally and technically) practitioner may at best increase the expense and time takent to get a patent issue.
+* At worse they may produce a rejected patent application.
+
+--- .class #id
+
+### Patent King offers the solution
+
+* Identify local patent practitioners in your area.
+* Future versions will rank practitioners by their prosecution success rate.
+* Will also be able to search practitioner by technical competency.
+
+
+
